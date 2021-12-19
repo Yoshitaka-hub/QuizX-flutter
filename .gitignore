@@ -31,6 +31,9 @@
 .pub/
 /build/
 
+.flutter-plugins-dependencies 2
+.packages 2
+
 # Web related
 lib/generated_plugin_registrant.dart
 
