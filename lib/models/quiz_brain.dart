@@ -1,6 +1,7 @@
 import 'question.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'dart:math' as math;
 
 class QuizBrain {
   int _questionNumber = 0;
@@ -13,8 +14,12 @@ class QuizBrain {
   }
 
   void nextQuestion() {
-    if (_questionNumber < _quizData.length - 1) {
-      _questionNumber++;
+    if (_questionNumber != 0) {
+      _quizData.removeAt(_questionNumber);
+    }
+    if (_quizData.isNotEmpty) {
+      var rand = math.Random();
+      _questionNumber = rand.nextInt(_quizData.length);
     } else {
       _questionNumber = 0;
     }
