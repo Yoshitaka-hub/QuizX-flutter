@@ -60,10 +60,10 @@ android {
     // _追加
     signingConfigs {
         release {
-            storeFile file("release.jks")
-            storePassword "releacepw"
-            keyAlias "release"
-            keyPassword "releacepw"
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
         }
     }
 
